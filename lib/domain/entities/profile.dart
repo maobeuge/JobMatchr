@@ -1,6 +1,12 @@
 import 'package:equatable/equatable.dart';
 import 'package:jobmatchr/domain/entities/experience.dart';
 
+enum JobAvailability {
+  activeSearch,
+  lookingForOpportunities,
+  notAvailable,
+}
+
 class Profile extends Equatable {
   final String id;
   final String name;
@@ -10,6 +16,7 @@ class Profile extends Equatable {
   final String introduction;
   final List<Experience> experiences;
   final String annualSalaryExpectations;
+  final JobAvailability jobAvailability;
 
   const Profile(
       {required this.id,
@@ -19,7 +26,8 @@ class Profile extends Equatable {
       required this.city,
       required this.introduction,
       required this.experiences,
-      required this.annualSalaryExpectations});
+      required this.annualSalaryExpectations,
+      required this.jobAvailability});
 
   @override
   List<Object?> get props => [
@@ -30,6 +38,7 @@ class Profile extends Equatable {
         city,
         introduction,
         experiences,
-        annualSalaryExpectations
+        annualSalaryExpectations,
+        jobAvailability
       ];
 }

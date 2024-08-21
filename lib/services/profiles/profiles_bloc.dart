@@ -18,21 +18,22 @@ class ProfilesBloc extends Bloc<ProfilesEvent, ProfilesState> {
         id: '0',
         name: 'Romain',
         lastName: 'Floriani',
-        profession: 'Flutter developer',
+        profession: 'Développeur Flutter',
         city: 'Seoul',
         introduction:
             "Passionate about development for over 3 years, I have collaborated withIT service companies, startups, and large enterprises to create high performing mobile applications. Eager for exciting new challenges, I am ready to bring my expertise and creativity to realize new projects abroad.",
         experiences: [
           Experience(
             position: "Lead tech Flutter",
-            startingTime: DateTime.now(),
-            endingTime: DateTime.now(),
+            startingTime: DateTime.parse("2022-10-01T00:00:00.000Z"),
+            endingTime: DateTime.parse("2023-12-01T00:00:00.000Z"),
             positionDescription:
                 "Collaborative design of the application within an agile team. Development of the Speechlab application in Flutter from scratch. Deployment of the application on stores (AppStore, PlayStore). Management of continuous integration and deployment for the application.",
             company: "Fastlane Educations",
           )
         ],
         annualSalaryExpectations: "40000",
+        jobAvailability: JobAvailability.activeSearch,
       ),
       Profile(
         id: '3',
@@ -45,14 +46,15 @@ class ProfilesBloc extends Bloc<ProfilesEvent, ProfilesState> {
         experiences: [
           Experience(
             position: "Lead tech Flutter",
-            startingTime: DateTime.now(),
-            endingTime: DateTime.now(),
+            startingTime: DateTime.parse("2022-10-01T00:00:00.000Z"),
+            endingTime: DateTime.parse("2023-12-01T00:00:00.000Z"),
             positionDescription:
                 "Collaborative design of the application within an agile team. Development of the Speechlab application in Flutter from scratch. Deployment of the application on stores (AppStore, PlayStore). Management of continuous integration and deployment for the application.",
             company: "Fastlane Educations",
           )
         ],
         annualSalaryExpectations: "40000",
+        jobAvailability: JobAvailability.lookingForOpportunities,
       ),
       Profile(
         id: '1',
@@ -65,34 +67,36 @@ class ProfilesBloc extends Bloc<ProfilesEvent, ProfilesState> {
         experiences: [
           Experience(
             position: "Lead tech Flutter",
-            startingTime: DateTime.now(),
-            endingTime: DateTime.now(),
+            startingTime: DateTime.parse("2022-10-01T00:00:00.000Z"),
+            endingTime: DateTime.parse("2023-12-01T00:00:00.000Z"),
             positionDescription:
                 "Collaborative design of the application within an agile team. Development of the Speechlab application in Flutter from scratch. Deployment of the application on stores (AppStore, PlayStore). Management of continuous integration and deployment for the application.",
             company: "Fastlane Educations",
           )
         ],
         annualSalaryExpectations: "40000",
+        jobAvailability: JobAvailability.notAvailable,
       ),
       Profile(
         id: '2',
         name: 'Romain',
         lastName: 'Floriani',
-        profession: 'Flutter developer',
+        profession: 'Développeur Flutter',
         city: 'Seoul',
         introduction:
             "Passionate about development for over 3 years, I have collaborated withIT service companies, startups, and large enterprises to create high performing mobile applications. Eager for exciting new challenges, I am ready to bring my expertise and creativity to realize new projects abroad.",
         experiences: [
           Experience(
             position: "Lead tech Flutter",
-            startingTime: DateTime.now(),
-            endingTime: DateTime.now(),
+            startingTime: DateTime.parse("2022-10-01T00:00:00.000Z"),
+            endingTime: DateTime.parse("2023-12-01T00:00:00.000Z"),
             positionDescription:
                 "Collaborative design of the application within an agile team. Development of the Speechlab application in Flutter from scratch. Deployment of the application on stores (AppStore, PlayStore). Management of continuous integration and deployment for the application.",
             company: "Fastlane Educations",
           )
         ],
         annualSalaryExpectations: "40000",
+        jobAvailability: JobAvailability.activeSearch,
       )
     ];
 

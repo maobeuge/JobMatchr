@@ -30,5 +30,10 @@ class UpdateSwipe extends SwipeEvent {
 }
 
 class EndSwipe extends SwipeEvent {
-  const EndSwipe();
+  final SwipeStatus? swipeStatus;
+
+  const EndSwipe({this.swipeStatus});
+
+  @override
+  List<Object> get props => [];
 }

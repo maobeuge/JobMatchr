@@ -51,6 +51,9 @@ class SwipeBloc extends Bloc<SwipeEvent, SwipeState> {
 
     on<EndSwipe>((event, emit) async {
       SwipeStatus? status = getStatus(position, swipeThreshold);
+      if (event.swipeStatus != null) {
+        status = event.swipeStatus;
+      }
 
       switch (status) {
         case SwipeStatus.like:
