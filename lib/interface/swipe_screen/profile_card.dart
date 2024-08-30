@@ -88,7 +88,7 @@ class ProfileCard extends StatelessWidget {
                   ),
                   Positioned(
                     bottom: 32,
-                    width: MediaQuery.of(context).size.width,
+                    width: screenSize.width,
                     child: Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 48),
                       child: Row(
@@ -171,94 +171,97 @@ class ProfileCard extends StatelessWidget {
 
   Widget buildCard(
           {required final Profile profile, final bool isFront = false}) =>
-      ClipRRect(
-        borderRadius: BorderRadius.circular(20),
-        child: Container(
-          alignment: Alignment.bottomLeft,
-          decoration: BoxDecoration(
-            image: DecorationImage(
-              image: const NetworkImage(
-                  "https://thumbs.wbm.im/pw/small/39573f81d4d58261e5e1ed8f1ff890f6.jpg"),
-              fit: BoxFit.cover,
-              colorFilter: isFront == true
-                  ? null
-                  : const ColorFilter.mode(Colors.black, BlendMode.color),
-              alignment: const Alignment(0, 0),
-            ),
-          ),
+      Padding(
+        padding: const EdgeInsets.all(16),
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(20),
           child: Container(
-            decoration: const BoxDecoration(
-              gradient: LinearGradient(
-                colors: [
-                  Colors.black,
-                  Colors.transparent,
-                ],
-                begin: Alignment.bottomCenter,
-                end: Alignment.center,
+            alignment: Alignment.bottomLeft,
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: const NetworkImage(
+                    "https://thumbs.wbm.im/pw/small/39573f81d4d58261e5e1ed8f1ff890f6.jpg"),
+                fit: BoxFit.cover,
+                colorFilter: isFront == true
+                    ? null
+                    : const ColorFilter.mode(Colors.black, BlendMode.color),
+                alignment: const Alignment(0, 0),
               ),
             ),
-            child: SizedBox.expand(
-              child: Padding(
-                padding: const EdgeInsets.only(left: 12, bottom: 12),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    const Spacer(
-                      flex: 5,
-                    ),
-                    Row(
-                      children: [
-                        Text(
-                          profile.name,
-                          style: GoogleFonts.outfit(
-                            color: Colors.white,
-                            fontSize: 32,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(left: 8.0),
-                          child: Text(
-                            profile.lastName,
+            child: Container(
+              decoration: const BoxDecoration(
+                gradient: LinearGradient(
+                  colors: [
+                    Colors.black,
+                    Colors.transparent,
+                  ],
+                  begin: Alignment.bottomCenter,
+                  end: Alignment.center,
+                ),
+              ),
+              child: SizedBox.expand(
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 12, bottom: 12),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      const Spacer(
+                        flex: 5,
+                      ),
+                      Row(
+                        children: [
+                          Text(
+                            profile.name,
                             style: GoogleFonts.outfit(
                               color: Colors.white,
                               fontSize: 32,
-                              fontWeight: FontWeight.normal,
+                              fontWeight: FontWeight.bold,
                             ),
                           ),
-                        ),
-                      ],
-                    ),
-                    Text(
-                      profile.profession,
-                      style: GoogleFonts.outfit(
-                        color: Colors.white,
-                        fontSize: 26,
-                        fontWeight: FontWeight.normal,
+                          Padding(
+                            padding: const EdgeInsets.only(left: 8.0),
+                            child: Text(
+                              profile.lastName,
+                              style: GoogleFonts.outfit(
+                                color: Colors.white,
+                                fontSize: 32,
+                                fontWeight: FontWeight.normal,
+                              ),
+                            ),
+                          ),
+                        ],
                       ),
-                    ),
-                    Builder(builder: (context) {
-                      final List<int> experience =
-                          getExprienceTime(profile.experiences);
-                      final int years = experience[0];
-                      final int months = experience[1];
-
-                      return Text(
-                        "$years ${years > 1 ? "ans" : "an"} et $months ${months > 1 ? "mois" : "mois"} d'expérience",
+                      Text(
+                        profile.profession,
                         style: GoogleFonts.outfit(
                           color: Colors.white,
-                          fontSize: 18,
+                          fontSize: 26,
                           fontWeight: FontWeight.normal,
                         ),
-                      );
-                    }),
-                    JobAvailabilityTag(
-                        jobAvailability: profile.jobAvailability),
-                    const Spacer(
-                      flex: 1,
-                    ),
-                  ],
+                      ),
+                      Builder(builder: (context) {
+                        final List<int> experience =
+                            getExperienceTime(profile.experiences);
+                        final int years = experience[0];
+                        final int months = experience[1];
+
+                        return Text(
+                          "$years ${years > 1 ? "ans" : "an"} et $months ${months > 1 ? "mois" : "mois"} d'expérience",
+                          style: GoogleFonts.outfit(
+                            color: Colors.white,
+                            fontSize: 18,
+                            fontWeight: FontWeight.normal,
+                          ),
+                        );
+                      }),
+                      JobAvailabilityTag(
+                          jobAvailability: profile.jobAvailability),
+                      const Spacer(
+                        flex: 1,
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),
@@ -267,7 +270,7 @@ class ProfileCard extends StatelessWidget {
       );
 }
 
-List<int> getExprienceTime(List<Experience> experiences) {
+List<int> getExperienceTime(List<Experience> experiences) {
   List<int> totalExperienceTime = [0, 0];
 
   for (final Experience experience in experiences) {

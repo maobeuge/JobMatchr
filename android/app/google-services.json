@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "2354700761",
+    "firebase_url": "https://jobmatch-r-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "jobmatch-r",
+    "storage_bucket": "jobmatch-r.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:2354700761:android:ef4a22a95c6cbc116eb9c8",
+        "android_client_info": {
+          "package_name": "com.romainfloriani.jobmatchr"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC0IgcsliW3ju90FCpLdY8QqoZcvWNeTm8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

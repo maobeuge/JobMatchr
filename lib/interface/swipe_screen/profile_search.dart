@@ -20,13 +20,10 @@ class ProfileSwipeScreen extends StatelessWidget {
                 if (state.profiles.isNotEmpty) {
                   return Stack(
                     children: [
-                      Padding(
-                        padding: const EdgeInsets.all(16),
-                        child: Stack(
-                          children: profiles.map((profile) {
-                            return ProfileCard(profiles: profiles);
-                          }).toList(),
-                        ),
+                      Stack(
+                        children: profiles.map((profile) {
+                          return ProfileCard(profiles: profiles);
+                        }).toList(),
                       ),
                     ],
                   );

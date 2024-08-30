@@ -18,16 +18,17 @@ class Profile extends Equatable {
   final String annualSalaryExpectations;
   final JobAvailability jobAvailability;
 
-  const Profile(
-      {required this.id,
-      required this.name,
-      required this.lastName,
-      required this.profession,
-      required this.city,
-      required this.introduction,
-      required this.experiences,
-      required this.annualSalaryExpectations,
-      required this.jobAvailability});
+  const Profile({
+    required this.id,
+    required this.name,
+    required this.lastName,
+    required this.profession,
+    required this.city,
+    required this.introduction,
+    required this.experiences,
+    required this.annualSalaryExpectations,
+    required this.jobAvailability,
+  });
 
   @override
   List<Object?> get props => [
@@ -39,6 +40,6 @@ class Profile extends Equatable {
         introduction,
         experiences,
         annualSalaryExpectations,
-        jobAvailability
+        jobAvailability,
       ];
 }

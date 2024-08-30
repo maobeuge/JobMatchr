@@ -6,5 +6,5 @@ class Blue {
 }
 
 class Grey {
-  static Color swipeButton = const Color.fromARGB(255, 43, 43, 43);
+  static Color swipeButton = const Color.fromARGB(255, 15, 24, 26);
 }

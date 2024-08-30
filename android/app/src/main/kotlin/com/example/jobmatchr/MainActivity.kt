@@ -1,4 +1,4 @@
-package com.example.jobmatchr
+package com.romainfloriani.jobmatchr
 
 import io.flutter.embedding.android.FlutterActivity
 
